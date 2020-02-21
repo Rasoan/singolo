@@ -156,25 +156,26 @@ nav {
 
 
 .description-services {
+  margin: 0 40px 0 0;
   font-size: 18px;
   font-family: 'Lato-Light';
   font-weight: normal;
   font-style: normal;
   line-height: 30px;
-  margin: 0 40px 0 0;
   text-align: justify;
+  color: #767e9e;
 }
 
 
 .table-services__heading-cell {
   margin: 0 0 12px 0;
-  /* условно */
   padding: 0;
   line-height: 0.8;
   font-size: 18px;
   font-family: 'Lato-Black';
   font-weight: bold;
   font-style: normal;
+  color: #666d89;
 }
 
 
@@ -185,6 +186,7 @@ nav {
   font-style: normal;
   line-height: 21px;
   text-align: justify;
+  color: #878da9;
 }
 
 
