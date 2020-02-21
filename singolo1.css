@@ -123,12 +123,11 @@ nav {
 
 .nav__li:hover {
   cursor: pointer;
-}
-
-
-.nav__li-active {
   color: #f06c64;
 }
+
+
+
 
 
 .nav__li::after {
