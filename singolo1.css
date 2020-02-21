@@ -81,7 +81,7 @@ h1 {
 }
 
 
-h1:hover {
+.h1__link:hover {
   cursor: pointer;
 }
 
@@ -96,6 +96,10 @@ h1:hover {
   color: #e36861;
 }
 
+
+.h1__link:hover .h1__star {
+  color: #ffffff;
+}
 
 nav {
   margin: 15px 40px 0 auto;
@@ -113,6 +117,9 @@ nav {
 .nav__li {
   display: flex;
   align-items: center;
+}
+
+.nav__li span {
   font-size: 12px;
   font-family: 'Lato-Bold';
   font-weight: bold;
@@ -121,8 +128,7 @@ nav {
 }
 
 
-
-.nav__li:hover {
+.nav__li span:hover {
   cursor: pointer;
   color: #f06c64;
 }
