@@ -56,7 +56,7 @@ body {
 }
 
 
-h1 {
+.main-header {
   justify-self: flex-start;
   width: 124px;
   height: 36px;
@@ -65,7 +65,7 @@ h1 {
 }
 
 
-.h1__link {
+.main-header__link {
   padding: 0;
   margin: 0;
   font-size: 25px;
@@ -76,25 +76,23 @@ h1 {
 }
 
 
-.h1__link:hover {
+.main-header__link:hover {
   cursor: pointer;
 }
 
 
-.h1__link,
-.h1__star {
+.main-header__link,
+.main-header__star {
   text-transform: uppercase;
 }
 
 
-.h1__star {
+.main-header__star {
   color: #e36861;
 }
 
 
-.h1__link:hover .h1__star {
-  color: #ffffff;
-}
+
 
 nav {
   margin: 17px 40px 0 auto;
@@ -114,16 +112,18 @@ nav {
   align-items: center;
 }
 
-.nav__li span {
+.nav__li a {
   font-size: 12px;
   font-family: 'Lato-Bold';
   font-weight: bold;
   color: #ffffff;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
 
-.nav__li span:hover {
+.nav__li a:hover {
+  
   cursor: pointer;
   color: #f06c64;
 }
