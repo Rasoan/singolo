@@ -34,6 +34,7 @@
   font-style: normal;
 }
 
+
 body {
   margin: 0;
 }
@@ -41,11 +42,9 @@ body {
 /*header*/
 .header {
   width: 100%;
-  background-color: #2d303a;
   border-bottom: 6px solid #323746;
+  background-color: #2d303a;
 }
-
-
 
 
 .vrap-for-navigate {
@@ -61,22 +60,22 @@ body {
 
 
 h1 {
+  justify-self: flex-start;
   width: 124px;
   height: 36px;
   margin: 0 40px;
   padding: 0;
-  justify-self: flex-start;
 }
 
 
 .h1__link {
+  padding: 0;
+  margin: 0;
   font-size: 25px;
   font-family: 'Lato-Bold';
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
-  padding: 0;
-  margin: 0;
 }
 
 
@@ -164,13 +163,13 @@ nav {
 
 
 .slider__btn-left {
-  background: url(assets/btn-left.png);
   position: absolute;
   top: 281px;
   left: 42px;
   width: 16px;
   height: 27px;
   z-index: 1;
+  background: url(assets/btn-left.png);
 }
 
 
@@ -182,13 +181,14 @@ nav {
 
 
 .slider__btn-right {
-  background: url(assets/btn-left.png);
+
   position: absolute;
   top: 281px;
   right: 40px;
   width: 16px;
   height: 27px;
   z-index: 1;
+  background: url(assets/btn-left.png);
   transform: rotate(180deg)
 }
 
@@ -202,7 +202,6 @@ nav {
 .slider__item {
   position: relative;
   height: 600px;
-
 }
 
 
@@ -231,9 +230,10 @@ nav {
 
 /*сервисы*/
 .wrap-services {
-  background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
+  background-color: #f2f2f2;
 }
+
 
 .container-services {
   padding: 59px 38px 67px 38px;
@@ -242,15 +242,12 @@ nav {
 }
 
 
-
-
-
 .name-services {
+  margin: 0 0 18px 0;
   font-size: 30px;
   font-family: 'Lato-Black';
   font-weight: bold;
   color: #666d89;
-  margin: 0 0 18px 0;
 }
 
 
@@ -263,6 +260,7 @@ nav {
   line-height: 30px;
   text-align: justify;
   color: #767e9e;
+  word-spacing: 1px;
 }
 
 
@@ -289,11 +287,6 @@ nav {
 }
 
 
-
-
-
-
-
 .wrap-desription-services {
   margin: 0 0 47px 0;
 }
@@ -304,9 +297,6 @@ nav {
   grid-template: repeat(2, 84px)/repeat(3, 300px);
   grid-gap: 39px 19px;
 }
-
-
-
 
 
 .table-services__item {
@@ -347,6 +337,7 @@ nav {
 .table-services__item:nth-child(1)::before {
   background: url(assets/pen.png) center no-repeat;
 }
+
 
 .table-services__item:nth-child(2)::before {
   background: url(assets/bulb.png) center no-repeat;
