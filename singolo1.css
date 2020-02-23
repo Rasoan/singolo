@@ -47,16 +47,13 @@ body {
 }
 
 
-.vrap-for-navigate {
+.wrap-for-navigate {
   position: relative;
   display: flex;
   margin: auto;
   width: 1020px;
   padding: 25px 0 28px 0;
 }
-
-
-
 
 
 h1 {
@@ -205,12 +202,12 @@ nav {
 }
 
 
-.vrap-for-phone {
+.wrap-for-phone {
   position: absolute;
 }
 
 
-.vrap-for-phone-vertical {
+.wrap-for-phone-vertical {
   top: 53px;
   left: 112px;
 }
@@ -222,7 +219,7 @@ nav {
 }
 
 
-.vrap-for-phone-gorizontal {
+.wrap-for-phone-gorizontal {
   top: 174px;
   left: 425px;
 }
