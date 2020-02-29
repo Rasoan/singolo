@@ -39,15 +39,22 @@ body {
   margin: 0;
 }
 
+
 .portfolio-wrapper {
-  width: 1020px; /*временно*/
   background-color: #2d303a;
 }
 
+
 .information-specialists-wrapper {
-  width: 1020px; /*временно*/
- background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
+
+
+.portfolio-container,
+.information-specialists-container {
+  width: 1020px;
+}
+
 
 .portfolio-title {
   color: #666d89;
@@ -55,7 +62,6 @@ body {
   font-size: 30px;
   font-weight: bold;
 }
-
 
 
 .portfolio-description {
@@ -72,6 +78,8 @@ body {
   font-size: 12px;
   font-weight: normal;
 }
+
+
 .portfolio-illustration-switch__item_active {
   color: #dedede;
 }
