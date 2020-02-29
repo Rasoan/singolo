@@ -11,79 +11,93 @@
 <body>
   <main>
     <article>
-
-      <h2 class="name-portfolio">Portfolio</h2>
-      <p class="description-portfolio">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
-        odio sem nec elit.</p>
-
-
-      <div class="switch-portfolio-illustration">
-        <input class="switch-portfolio-illustration__item" type="button" value="All">
-        <input class="switch-portfolio-illustration__item" type="button" value="Web Design">
-        <input class="switch-portfolio-illustration__item" type="button" value="Graphic Design">
-        <input class="switch-portfolio-illustration__item" type="button" value="Artwork">
-      </div>
-      <div class="portfolio-illustration">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
-        <img class="portfolio-illustration__item" src="" alt="">
+      <div class="portfolio-wrapper">
+        <h2 class="portfolio-title">Portfolio</h2>
+        <p class="portfolio-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+        <ul class="portfolio-illustration-switch">
+          <li><input class="portfolio-illustration-switch__item portfolio-illustration-switch__item_active" type="button" value="All"></li>
+          <li><input class="portfolio-illustration-switch__item" type="button" value="Web Design"></li>
+          <li><input class="portfolio-illustration-switch__item" type="button" value="Graphic Design"></li>
+          <li><input class="portfolio-illustration-switch__item" type="button" value="Artwork"></li>
+        </ul>
+        <ul class="portfolio-illustration">
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+          <li><img class="portfolio-illustration__item" src="" alt=""></li>
+        </ul>
       </div>
     </article>
     <article>
-      <h2>About us</h2>
-      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-     
       <div class="information-specialists-wrapper">
-        <figure class="information-specialists">
-          <img class="information-specialists__photo" src="" alt="">
-          <figcaption>
-            <p class="information-specialists__name">Adam Jensen</p>
-            <p class="information-specialists__description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-          </figcaption>
-            <div class="information-specialists__social">
-              <img class="information-specialists__facebook" src="" alt="">
-              <img class="information-specialists__google" src="" alt="">
-              <img class="information-specialists__twitter" src="" alt="">
-              <img class="information-specialists__linkedin" src="" alt="">
+        <h2 class="information-specialists-title">About us</h2>
+        <p class="information-specialists-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris
+          condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <ul class="list-specialists">
+          <li class="list-specialists__item">
+            <div class="information-specialist">
+              <figure class="information-specialist__main-info">
+                <img class="information-specialist__photo" src="" alt="">
+                <figcaption>
+                  <p class="information-specialist__name">Adam Jensen</p>
+                  <p class="information-specialist__description">Quisque luctus, quam eget molestie commodo, lacus purus
+                    cursus purus, nec rutrum tellus dolor id lorem.</p>
+                </figcaption>
+              </figure>
+              <div class="information-specialist__icons-socials">
+                <img class="information-specialist__icon-facebook" src="" alt="">
+                <img class="information-specialist__icon-google"   src="" alt="">
+                <img class="information-specialist__icon-twitter"  src="" alt="">
+                <img class="information-specialist__icon-linkedin" src="" alt="">
+              </div>
             </div>
-        </figure>
-
-        <figure class="information-specialists">
-          <img class="information-specialists__photo" src="" alt="">
-          <figcaption>
-            <p class="information-specialists__name">Adam Jensen</p>
-            <p class="information-specialists__description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-          </figcaption>
-            <div class="information-specialists__social">
-              <img class="information-specialists__facebook" src="" alt="">
-              <img class="information-specialists__google" src="" alt="">
-              <img class="information-specialists__twitter" src="" alt="">
-              <img class="information-specialists__linkedin" src="" alt="">
+          </li>
+          <li class="list-specialists__item">
+            <div class="information-specialist">
+              <figure class="information-specialist__main-info">
+                <img class="information-specialist__photo" src="" alt="">
+                <figcaption>
+                  <p class="information-specialist__name">Adam Jensen</p>
+                  <p class="information-specialist__description">Quisque luctus, quam eget molestie commodo, lacus purus
+                    cursus purus, nec rutrum tellus dolor id lorem.</p>
+                </figcaption>
+              </figure>
+              <div class="information-specialist__icons-socials">
+                <img class="information-specialist__icon-facebook" src="" alt="">
+                <img class="information-specialist__icon-google"   src="" alt="">
+                <img class="information-specialist__icon-twitter"  src="" alt="">
+                <img class="information-specialist__icon-linkedin" src="" alt="">
+              </div>
             </div>
-        </figure>
-
-        <figure class="information-specialists">
-          <img class="information-specialists__photo" src="" alt="">
-          <figcaption>
-            <p class="information-specialists__name">Adam Jensen</p>
-            <p class="information-specialists__description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-          </figcaption>
-            <div class="information-specialists__social">
-              <img class="information-specialists__facebook" src="" alt="">
-              <img class="information-specialists__google" src="" alt="">
-              <img class="information-specialists__twitter" src="" alt="">
-              <img class="information-specialists__linkedin" src="" alt="">
+          </li>
+          <li class="list-specialists__item">
+            <div class="information-specialist">
+              <figure class="information-specialist__main-info">
+                <img class="information-specialist__photo" src="" alt="">
+                <figcaption>
+                  <p class="information-specialist__name">Adam Jensen</p>
+                  <p class="information-specialist__description">Quisque luctus, quam eget molestie commodo, lacus purus
+                    cursus purus, nec rutrum tellus dolor id lorem.</p>
+                </figcaption>
+              </figure>
+              <div class="information-specialist__icons-socials">
+                <img class="information-specialist__icon-facebook" src="" alt="">
+                <img class="information-specialist__icon-google"   src="" alt="">
+                <img class="information-specialist__icon-twitter"  src="" alt="">
+                <img class="information-specialist__icon-linkedin" src="" alt="">
+              </div>
             </div>
-        </figure>
+          </li>
+        </ul>
       </div>
     </article>
   </main>

@@ -38,3 +38,73 @@
 body {
   margin: 0;
 }
+
+.portfolio-wrapper {
+  width: 1020px; /*временно*/
+  background-color: #2d303a;
+}
+
+.information-specialists-wrapper {
+  width: 1020px; /*временно*/
+ background-color: #f2f2f2;
+}
+
+.portfolio-title {
+  color: #666d89;
+  font-family: "Lato-Black";
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+.portfolio-description {
+  color: #767e9e;
+  font-family: "Lato-Light";
+  font-size: 18px;
+  font-weight: normal;
+}
+
+
+.portfolio-illustration-switch__item {
+  color: #767e9e;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+  font-weight: normal;
+}
+.portfolio-illustration-switch__item_active {
+  color: #dedede;
+}
+
+
+.information-specialists-title {
+  color: #666d89;
+  font-family: "Lato-Black";
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.information-specialists-description {
+  color: #767e9e;
+  font-family: "Lato-Light";
+  font-size: 18px;
+  font-weight: normal;
+}
+
+
+.information-specialist__name {
+  color: #666d89;
+  font-family: "Lato-Black";
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.information-specialist__description {
+  color: #767e9e;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+  font-weight: normal;
+}
+
