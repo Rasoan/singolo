@@ -40,12 +40,6 @@ body {
 }
 
 
-
-.container {
-  padding: 60px 40px 48px 40px;
-}
-
-
 .portfolio-wrapper {
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
@@ -58,10 +52,17 @@ body {
 }
 
 
-.portfolio-container,
-.information-specialists-container {
+.container {
+  margin: 0 auto;
   width: 940px;
-  margin: 0;
+  padding: 60.2px 40px 67px 40px;
+}
+
+
+.portfolio-container {}
+
+.information-specialists-container {
+  padding-top: 59.5px;
 }
 
 
@@ -76,7 +77,9 @@ body {
   padding: 0;
 }
 
+
 .portfolio-title {
+  margin-bottom: 22px;
   color: #666d89;
   font-family: "Lato-Black";
   font-size: 30px;
@@ -85,6 +88,7 @@ body {
 
 
 .portfolio-description {
+  margin-bottom: 14.8px;
   color: #767e9e;
   font-family: "Lato-Light";
   font-size: 18px;
@@ -96,7 +100,7 @@ body {
 .portfolio-illustration-switch,
 .portfolio-illustration,
 .list-specialists {
-  margin: 15px 0;
+  margin: 0;
   list-style: none;
   padding-left: 0;
 }
@@ -104,6 +108,7 @@ body {
 
 .portfolio-illustration-switch {
   display: flex;
+  margin-bottom: 19px;
 }
 
 
@@ -115,6 +120,7 @@ body {
 .portfolio-illustration-switch li:last-child {
   margin: 0 0 0 1px;
 }
+
 
 .portfolio-illustration-switch__item {
   padding: 3px 6px;
@@ -138,17 +144,10 @@ body {
 
 
 .portfolio-illustration {
-  margin: 19px 0;
   display: grid;
   grid-template: repeat(3, 187px)/repeat(4, 220px);
   grid-gap: 20px;
 }
-
-
-.information-specialists-container {
-  padding: 59.2px 40px 100px 40px;
-}
-
 
 
 .information-specialist__main-info {
@@ -156,10 +155,8 @@ body {
 }
 
 
-
-
 .information-specialists-title {
-  margin: 0 0 18px 0;
+  margin-bottom: 17.5px;
   color: #666d89;
   font-family: "Lato-Black";
   font-size: 30px;
@@ -168,6 +165,7 @@ body {
 
 
 .information-specialists-description {
+  margin: 0 0 45.5px 0px;
   color: #767e9e;
   font-family: "Lato-Light";
   font-size: 18px;
@@ -179,15 +177,24 @@ body {
 
 
 .list-specialists {
-  margin: 44.8px 0 44.8px -1.1px;
-  display: grid;
-  grid-template: repeat(1, 300px)/repeat(3, 300px);
-  grid-gap: 0 20px;
+  margin: -0.5px;
+  display: flex;
+}
+
+
+.list-specialists li {
+  margin-right: 20px;
+  padding: 0;
+}
+
+
+.list-specialists img {
+  padding-bottom: 11px;
 }
 
 
 .information-specialist__name {
-  margin: 11px 0 8px 0;
+  margin: 0 0 8px 0;
   color: #666d89;
   font-family: "Lato-Black";
   font-size: 18px;
@@ -196,11 +203,39 @@ body {
 
 
 .information-specialist__description {
-  margin: 0;
+  margin: 0 0 24px 0;
   color: #767e9e;
   font-family: "Lato-Regular";
   font-size: 12px;
   font-weight: normal;
   line-height: 21px;
   word-spacing: -0.5px;
+}
+
+
+.information-specialist__icons-socials {
+  display: flex;
+  padding: 0 0 0 1px;
+}
+
+
+.information-specialist__icon-link {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0 6.5px 0 1px;
+  border: 1px solid #6a718c;
+  border-radius: 50%;
+}
+
+
+.information-specialist__icon {
+  background-color: inherit;
+  fill: #666d89;
+  width: 14px;
+  height: 14px;
+
 }
