@@ -64,7 +64,7 @@ body {
 }
 
 .information-specialists-container {
-  padding: 59.5px 40px 67px 40px;
+  padding: 59.5px 40px 32px 40px;
 }
 
 
@@ -157,6 +157,9 @@ body {
   grid-gap: 20px;
 }
 
+.portfolio-illustration li:nth-child(n+13) {
+  display: none;
+}
 
 .portfolio-illustration__item:hover {
   cursor: pointer;
@@ -194,26 +197,42 @@ body {
 .list-specialists {
   margin: -0.5px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 
 .list-specialists li {
-  margin-right: 20px;
+  margin: 0 20px 35px 0;
   padding: 0;
 }
 
 
+.list-specialists li:nth-child(3n) {
+  margin-right: 0px;
+
+}
+
+.list-specialists__item {
+  width: 300px;
+}
+
 .list-specialists img {
+  width: 300px;
   padding-bottom: 11px;
+  object-fit: cover;
 }
 
 
 .information-specialist__name {
+  width: 100%;
   margin: 0 0 8px 0;
   color: #666d89;
   font-family: "Lato-Black";
   font-size: 18px;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 
