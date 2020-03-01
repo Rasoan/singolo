@@ -157,7 +157,7 @@ body {
   grid-gap: 20px;
 }
 
-.portfolio-illustration li:nth-child(n+13) {
+.portfolio-illustration  li:nth-child(n+13) {
   display: none;
 }
 

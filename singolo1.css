@@ -1,8 +1,8 @@
 /*шрифты*/
 @font-face {
   font-family: 'Lato-Bold';
-  src: url('assets/fonts/lato-Bold/Lato-Bold.eot');
-  src: local('☺'), url('assets/fonts/lato-Bold/Lato-Bold.woff') format('woff'), url('assets/fonts/lato-Bold/Lato-Bold.ttf') format('truetype'), url('assets/fonts/lato-Bold/Lato-Bold.svg') format('svg');
+  src: url('assets/fonts/Lato-Bold/Lato-Bold.eot');
+  src: local('☺'), url('assets/fonts/Lato-Bold/Lato-Bold.woff') format('woff'), url('assets/fonts/Lato-Bold/Lato-Bold.ttf') format('truetype'), url('assets/fonts/Lato-Bold/Lato-Bold.svg') format('svg');
   font-weight: bold;
   font-style: normal;
 }
