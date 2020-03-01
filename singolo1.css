@@ -40,14 +40,14 @@ body {
 }
 
 /*header*/
-.header {
+.header-wrap {
   width: 100%;
   border-bottom: 6px solid #323746;
   background-color: #2d303a;
 }
 
 
-.wrap-for-navigate {
+.header-container {
   position: relative;
   display: flex;
   margin: auto;
@@ -56,7 +56,7 @@ body {
 }
 
 
-.main-header {
+.header-title {
   justify-self: flex-start;
   width: 124px;
   height: 36px;
@@ -65,7 +65,7 @@ body {
 }
 
 
-.main-header__link {
+.header-title__link {
   padding: 0;
   margin: 0;
   font-size: 25px;
@@ -73,33 +73,34 @@ body {
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  letter-spacing: -0.7px;
 }
 
 
-.main-header__link:hover {
+.header-title__link:hover {
   cursor: pointer;
 }
 
 
-.main-header__link,
-.main-header__star {
+.header-title__link,
+.header-title__star {
   text-transform: uppercase;
 }
 
 
-.main-header__star {
+.header-title__star {
   color: #e36861;
 }
 
 
 
 
-nav {
+.header-navigation-container {
   margin: 17px 40px 0 auto;
 }
 
 
-.nav__ul {
+.header-navigation-list {
   display: flex;
   margin: 0;
   padding: 0;
@@ -107,30 +108,30 @@ nav {
 }
 
 
-.nav__li {
+.header-navigation-list__item {
   display: flex;
   align-items: center;
 }
 
-.nav__li a {
+.header-navigation-list__link {
   font-size: 12px;
   font-family: 'Lato-Bold';
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: -0.09px;
 }
 
 
-.nav__li a:hover {
-  
+.header-navigation-list__link:hover {
   cursor: pointer;
   color: #f06c64;
 }
 
 
 
-.nav__li::after {
+.header-navigation-list__item::after {
   content: "";
   width: 3px;
   height: 3px;
@@ -139,7 +140,7 @@ nav {
 }
 
 
-.nav__li:last-child::after {
+.header-navigation-list__item:last-child::after {
   content: "";
   width: 0;
   height: 0;
@@ -147,15 +148,20 @@ nav {
 }
 
 /*слайдер*/
-.container-slider {
+.slider-wrap {
   background-color: #f06c64;
+}
+
+
+.slider-container {
+  width: 1020px;
+  height: 600px;
+  margin: auto;
 }
 
 
 .slider {
   position: relative;
-  width: 1020px;
-  margin: auto;
 }
 
 
@@ -170,15 +176,7 @@ nav {
 }
 
 
-.slider__btn-left:hover {
-  content: "";
-  background: url(assets/btn-left-hover.png);
-  cursor: pointer;
-}
-
-
 .slider__btn-right {
-
   position: absolute;
   top: 281px;
   right: 40px;
@@ -190,57 +188,63 @@ nav {
 }
 
 
+.slider__btn-left:hover {
+  content: "";
+  background: url(assets/btn-left-hover.png);
+  cursor: pointer;
+}
+
+
 .slider__btn-right:hover {
   background: url(assets/btn-left-hover.png);
   cursor: pointer;
 }
 
 
+
 .slider__item {
   position: relative;
-  height: 600px;
 }
 
 
-.wrap-for-phone {
+.slider__wrap-phone {
   position: absolute;
 }
 
 
-.wrap-for-phone-vertical {
+.slider__wrap-phone_vertical {
   top: 53px;
   left: 112px;
 }
 
 
-.phone:hover {
+.slider__wrap-phone_gorizontal {
+  top: 174px;
+  left: 425px;
+}
+
+.slider__phone:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
 
-.wrap-for-phone-gorizontal {
-  top: 174px;
-  left: 425px;
-}
-
-
 /*сервисы*/
-.wrap-services {
+.services-wrapper {
   border-bottom: 6px solid #ffffff;
   background-color: #f2f2f2;
 }
 
 
-.container-services {
-  padding: 59px 38px 67px 38px;
+.services-container {
+  padding: 59px 40px 67px 40px;
   margin: auto;
-  width: 938px;
+  width: 940px;
 }
 
 
-.name-services {
-  margin: 0 0 18px 0;
+.services__tittle {
+  margin: 0 0 18px 0.2px;
   font-size: 30px;
   font-family: 'Lato-Black';
   font-weight: bold;
@@ -248,8 +252,12 @@ nav {
 }
 
 
-.description-services {
-  margin: 0;
+.services__description-container {
+  margin: 0 0 47px 0;
+}
+
+.services__description {
+  margin: 0 0 0 0.2px;
   font-size: 18px;
   font-family: 'Lato-Light';
   font-weight: normal;
@@ -260,8 +268,32 @@ nav {
   word-spacing: 1px;
 }
 
+.services__table {
+  display: grid;
+  grid-template: repeat(2, 84px)/repeat(3, 300px);
+  grid-gap: 39px 19px;
+  margin: 0 0 0 1px;
+}
 
-.table-services__heading-cell {
+
+.services__table-cell {
+  position: relative;
+  display: flex;
+}
+
+
+.services__table-cell:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+.services__table-cell-info {
+  width: 220px;
+}
+
+
+.services__table-tittle-cell {
   margin: 0 0 12px 0;
   padding: 0;
   line-height: 0.8;
@@ -273,7 +305,12 @@ nav {
 }
 
 
-.table-services__descriptions-cell {
+
+
+
+.services__table-description-cell {
+  margin: 0;
+  padding: 0;
   font-size: 12px;
   font-family: 'Lato-Regular';
   font-weight: normal;
@@ -281,49 +318,33 @@ nav {
   line-height: 21px;
   text-align: justify;
   color: #878da9;
+  letter-spacing: 0px;
 }
 
 
-.wrap-desription-services {
-  margin: 0 0 47px 0;
-}
 
 
-.table-services {
-  display: grid;
-  grid-template: repeat(2, 84px)/repeat(3, 300px);
-  grid-gap: 39px 19px;
-}
 
 
-.table-services__item {
-  position: relative;
-  display: flex;
-}
 
 
-.table-services__item:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
 
 
-.table-services__descriptions-cell {
-  margin: 0;
-  padding: 0;
-}
 
 
-.table-services__wrap-info {
-  width: 220px;
-}
 
 
-.table-services__item::before {
+
+
+
+
+
+
+.services__table-cell::before {
   content: "";
   width: 55px;
   height: 55px;
-  margin: 0 20px 0 0;
+  margin: 0 20.5px 0 0;
   padding: 0;
   border: 2px solid #666d89;
   border-radius: 75%;
@@ -331,33 +352,33 @@ nav {
 }
 
 
-.table-services__item:nth-child(1)::before {
+.services__table-cell:nth-child(1)::before {
   background: url(assets/pen.png) center no-repeat;
 }
 
 
-.table-services__item:nth-child(2)::before {
+.services__table-cell:nth-child(2)::before {
   background: url(assets/bulb.png) center no-repeat;
   background-size: 22px;
 }
 
 
-.table-services__item:nth-child(3)::before {
+.services__table-cell:nth-child(3)::before {
   background: url(assets/heart.png) center no-repeat;
 }
 
 
-.table-services__item:nth-child(4)::before {
+.services__table-cell:nth-child(4)::before {
   background: url(assets/phone.png) center no-repeat;
   background-size: 22px;
 }
 
 
-.table-services__item:nth-child(5)::before {
+.services__table-cell:nth-child(5)::before {
   background: url(assets/bubble.png) center no-repeat;
 }
 
 
-.table-services__item:nth-child(6)::before {
+.services__table-cell:nth-child(6)::before {
   background: url(assets/star.png) center no-repeat;
 }
