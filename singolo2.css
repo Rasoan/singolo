@@ -55,14 +55,16 @@ body {
 .container {
   margin: 0 auto;
   width: 940px;
-  padding: 60.2px 40px 67px 40px;
+  padding: 0 40px;
 }
 
 
-.portfolio-container {}
+.portfolio-container {
+  padding: 60.2px 40px 67px 40px;
+}
 
 .information-specialists-container {
-  padding-top: 59.5px;
+  padding: 59.5px 40px 67px 40px;
 }
 
 
