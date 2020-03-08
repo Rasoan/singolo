@@ -1,1 +1,1 @@
-https://rasoan.github.io/singolo/singolo1.html
+https://rasoan.github.io/singolo/index.html
