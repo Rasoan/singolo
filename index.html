@@ -364,19 +364,27 @@
               mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
               tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
             <div class="form-contacts-container">
-              <form class="main-form" action="singolo.php">
+              <form id="main-form-JS" class="main-form" action="singolo.php">
                 <ul class="main-form__ul">
-                  <li class="main-form__li"><input class="main-form__item main-form__input" type="text" name="Name"
+                  <li class="main-form__li"><input id="main-form__input-name-JS" class="main-form__item main-form__input" type="text" name="Name"
                       placeholder="Name (Required)" required></li>
-                  <li class="main-form__li"><input class="main-form__item main-form__input" type="email" name="Email"
+                  <li class="main-form__li"><input id="main-form__input-email-JS" class="main-form__item main-form__input" type="email" name="Email"
                       placeholder="Email (Required)" required></li>
-                  <li class="main-form__li"><input class="main-form__item main-form__input" type="text" name="Subject"
+                  <li class="main-form__li"><input id="main-form__input-subject-JS" class="main-form__item main-form__input" type="text" name="Subject"
                       placeholder="Subject"></li>
-                  <li class="main-form__li"><textarea class="main-form__item main-form__textarea" name="Describe"
+                  <li class="main-form__li"><textarea id="main-form__textarea-describe-JS" class="main-form__item main-form__textarea" name="Describe"
                       placeholder="Describe your project in detail..."></textarea></li>
-                  <li class="main-form_li"><button class="main-form__item main-form__button">Submit</button></li>
+                  <li class="main-form_li"><button id="main-form__button-JS" class="main-form__item main-form__button">Submit</button></li>
                 </ul>
               </form>
+              <div id="form-message-block-background-JS" class="form-message-block hidden"></div>
+              <div id="form-message-block-JS" class="form-message-block__modal hidden">
+                <p>Письмо отправлено</p>
+                <p id="form-message-block-topic-JS"></p>
+                <p id="form-message-block-description-JS"></p>
+                <button id="form-message-block-ok-JS" class="form-message-block-ok">ok</button>
+                <button id="form-message-block-close-JS" class="form-message-block-close"></button>
+              </div>
               <div class="contacts-information-container">
                 <h3 class="contacts-information-tittle">Contact Information</h3>
                 <p class="contacts-information-description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra

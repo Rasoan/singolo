@@ -691,6 +691,83 @@ body {
   list-style-type: none;
 }
 
+.form-message-block {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: black;
+}
+
+
+.form-message-block__modal {
+  position: fixed;
+  top: 20%;
+  left: calc(50% - 250px);
+  margin: 0 auto;
+  padding: 10px 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.form-message-block-ok {
+  padding: 2px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+
+.form-message-block-ok:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+
+.form-message-block-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 5px;
+  top: 2px;
+  right: 2px;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  border: 2px solid black;
+  opacity: 0.8;
+}
+
+
+.form-message-block-close:hover {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+}
+
+
+
+.form-message-block-close::after {
+  content: "X";
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 0px;
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+
 
 .main-form__li {
   padding: 0;
