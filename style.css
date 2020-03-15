@@ -124,6 +124,11 @@ body {
 
 .header-navigation-list__link:hover {
   cursor: pointer;
+}
+
+
+.header-navigation-list__link-active {
+  border-radius: 3px;
   color: #f06c64;
 }
 
