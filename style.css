@@ -155,11 +155,14 @@ body {
 }
 
 
+
+
 .slider-container {
   width: 1020px;
   height: 600px; 
   margin: auto;
   position: relative;
+  background-color: #ff6c64;
   overflow: hidden;
 }
 
@@ -271,6 +274,46 @@ body {
 }
 
 
+.slider__phone-vertical-click {
+  position: absolute;
+  top: 53px;
+  left: 112px;
+  width: 215px;
+  height: 458px;
+  border: 0;
+  border-radius: 27px;
+  z-index: 1;
+  background-color: rgb(46, 6, 6);
+  opacity: 0;
+}
+
+.slider__phone-vertical-click:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+
+
+.slider__phone-horizontal-click {
+  position: absolute;
+  top: 174px;
+  left: 425px;
+  width: 458px;
+  height: 215px;
+  border: 0;
+  border-radius: 27px;
+  z-index: 1;
+  background-color: rgb(46, 6, 6);
+  opacity: 0;
+}
+
+.slider__phone-horizontal-click:hover {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+
+
 
 .slider__phone-horizontal-display_zindex {
   z-index: 1;
@@ -289,8 +332,7 @@ body {
 
 
 .slider__phone:hover {
-  cursor: pointer;
-  opacity: 0.8;
+  
 }
 
 
