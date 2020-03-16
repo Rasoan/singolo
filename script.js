@@ -14,6 +14,193 @@ MENU.addEventListener('click', (event) => {
   event.target.classList.add('header-navigation-list__link-active');  // добавить класс
 });
 
+// слайдер 
+let items = document.querySelectorAll('.slider__item');
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+	currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction) {
+	isEnabled = false;
+	items[currentItem].classList.add(direction);
+	items[currentItem].addEventListener('animationend', function() {
+		this.classList.remove('slider__item-active', direction);
+	});
+}
+
+function showItem(direction) {
+	items[currentItem].classList.add('slider__item-next', direction);
+	items[currentItem].addEventListener('animationend', function() {
+		this.classList.remove('slider__item-next', direction);
+		this.classList.add('slider__item-active');
+		isEnabled = true;
+	});
+}
+
+function nextItem(n) {
+	hideItem('to-left');
+	changeCurrentItem(n + 1);
+	showItem('from-right');
+}
+
+function previousItem(n) {
+	hideItem('to-right');
+	changeCurrentItem(n - 1);
+	showItem('from-left');
+}
+
+document.querySelector('.slider__btn-left').addEventListener('click', function() {
+	if (isEnabled) {
+		previousItem(currentItem);
+	}
+});
+
+document.querySelector('.slider__btn-right').addEventListener('click', function() {
+	if (isEnabled) {
+		nextItem(currentItem);
+	}
+});
+
+const swipedetect = (el) => {
+  
+	let surface = el;
+	let startX = 0;
+	let startY = 0;
+	let distX = 0;
+	let distY = 0;
+	let startTime = 0;
+	let elapsedTime = 0;
+
+	let threshold = 150;
+	let restraint = 100;
+	let allowedTime = 300;
+
+	surface.addEventListener('mousedown', function(e){
+		startX = e.pageX;
+		startY = e.pageY;
+		startTime = new Date().getTime();
+		e.preventDefault();
+	}, false);
+
+	surface.addEventListener('mouseup', function(e){
+		distX = e.pageX - startX;
+		distY = e.pageY - startY;
+		elapsedTime = new Date().getTime() - startTime;
+		if (elapsedTime <= allowedTime){
+			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+				if ((distX > 0)) {
+					if (isEnabled) {
+						previousItem(currentItem);
+					}
+				} else {
+					if (isEnabled) {
+						nextItem(currentItem);
+					}
+				}
+			}
+		}
+		e.preventDefault();
+	}, false);
+
+	surface.addEventListener('touchstart', function(e){
+		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
+			if (e.target.classList.contains('slider__btn-left')) {
+				if (isEnabled) {
+					previousItem(currentItem);
+				}
+			} else {
+				if (isEnabled) {
+					nextItem(currentItem);
+				}
+			}
+		}
+			var touchobj = e.changedTouches[0];
+			startX = touchobj.pageX;
+			startY = touchobj.pageY;
+			startTime = new Date().getTime();
+			e.preventDefault();
+	}, false);
+
+	surface.addEventListener('touchmove', function(e){
+			e.preventDefault();
+	}, false);
+
+	surface.addEventListener('touchend', function(e){
+			var touchobj = e.changedTouches[0];
+			distX = touchobj.pageX - startX;
+			distY = touchobj.pageY - startY;
+			elapsedTime = new Date().getTime() - startTime;
+			if (elapsedTime <= allowedTime){
+					if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+							if ((distX > 0)) {
+								if (isEnabled) {
+									previousItem(currentItem);
+								}
+							} else {
+								if (isEnabled) {
+									nextItem(currentItem);
+								}
+							}
+					}
+			}
+			e.preventDefault();
+	}, false);
+}
+
+var el = document.querySelector('.slider-container');
+swipedetect(el);
+
+
+/* телефоны */
+
+const PHONE_VERTICAL = document.getElementById('slider__phone-vertical-JS');
+const PHONE_VERTICAL_DISPLAY = document.getElementById('slider__phone-vertical-display-JS');
+const PHONE_HORIZONTAL = document.getElementById('slider__phone-horizontal-JS');
+const PHONE_HORIZONTAL_DISPLAY = document.getElementById('slider__phone-horizontal-display-JS');
+
+
+PHONE_VERTICAL.addEventListener('click', () => {
+    	PHONE_VERTICAL_DISPLAY.classList.toggle('slider__phone-horizontal-display_zindex');
+});
+
+PHONE_VERTICAL_DISPLAY.addEventListener('click', () => {
+	PHONE_VERTICAL_DISPLAY.classList.toggle('slider__phone-horizontal-display_zindex');
+});
+
+PHONE_HORIZONTAL.addEventListener('click', () => {
+	PHONE_HORIZONTAL_DISPLAY.classList.toggle('slider__phone-horizontal-display_zindex');
+});
+
+PHONE_HORIZONTAL_DISPLAY.addEventListener('click', () => {
+  PHONE_HORIZONTAL_DISPLAY.classList.toggle('slider__phone-horizontal-display_zindex');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Get a quote
 // событие отправки формы и нажатия клавиши отправить
