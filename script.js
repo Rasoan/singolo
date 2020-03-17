@@ -262,3 +262,70 @@ BUTTON_CLOSE.addEventListener('click', () => {
   document.getElementById('form-message-block-topic-JS').innerText = ''; // убрать текст из перемен. id-ишник result
   document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
 });
+
+
+
+// портфолио
+const PORTFOLIO_BUTTON_ALL = document.getElementById('portfolio-button-all-JS');
+const PORTFOLIO_BUTTON_WEB = document.getElementById('portfolio-button-web-design-JS');
+const PORTFOLIO_BUTTON_GRAPHIC = document.getElementById('portfolio-button-graphic-design-JS');
+const PORTFOLIO_BUTTON_ARTWORK = document.getElementById('portfolio-button-artwork-JS');
+const PORTFOLIO_ILLUSTRATION = document.getElementById('portfolio-illustration-JS');
+const PORTFOLIO_SWITCH = document.getElementById('portfolio-illustration-switch-JS');
+
+
+
+
+// portfolio-illustration__web
+// portfolio-illustration__graphic
+// portfolio-illustration__artwork
+// portfolio-illustration-switch__item_active
+// portfolio-illustration-switch-JS
+
+PORTFOLIO_BUTTON_ALL.addEventListener('click', (event) => {
+	PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => element.classList.remove('hidden')); // пробежаться по списку и поудалять
+
+
+	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active')); // пробежаться по списку и поудалять
+	PORTFOLIO_BUTTON_ALL.classList.add('portfolio-illustration-switch__item_active');
+});
+
+
+PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
+  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
+		if(~element.className.indexOf('portfolio-illustration__web', 0))
+	  	element.classList.remove('hidden');
+		else
+		  element.classList.add('hidden');
+	}); // пробежаться по списку и поудалять
+
+
+	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+	PORTFOLIO_BUTTON_WEB.classList.add('portfolio-illustration-switch__item_active');
+});
+
+
+PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
+  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
+		if(~element.className.indexOf('portfolio-illustration__graphic', 0))
+	  	element.classList.remove('hidden');
+		else
+		  element.classList.add('hidden');
+	}); // пробежаться по списку и поудалять
+
+	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+	PORTFOLIO_BUTTON_GRAPHIC.classList.add('portfolio-illustration-switch__item_active');
+});
+
+
+PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
+  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
+		if(~element.className.indexOf('portfolio-illustration__artwork', 0))
+	  	element.classList.remove('hidden');
+		else
+		  element.classList.add('hidden');
+	}); // пробежаться по списку и поудалять
+
+	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+	PORTFOLIO_BUTTON_ARTWORK.classList.add('portfolio-illustration-switch__item_active');
+});
