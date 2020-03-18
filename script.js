@@ -286,6 +286,8 @@ const PORTFOLIO_SWITCH = document.getElementById('portfolio-illustration-switch-
 const PORTFOLIO_BUTTON_ALL = document.getElementById('portfolio-button-all-JS'); // айдишник кнопки ALL
 let PORTFOLIO_ILLUSTRATION = document.getElementById('portfolio-illustration-JS'); // айдишник контейнера моих ли
 const rand =  Math.floor(Math.random() * 12345) % PORTFOLIO_ILLUSTRATION.querySelectorAll('li').length; 
+let array_portf = PORTFOLIO_ILLUSTRATION.querySelectorAll('li');
+let after_portf = [];
 
 
 	
@@ -299,7 +301,7 @@ const rand =  Math.floor(Math.random() * 12345) % PORTFOLIO_ILLUSTRATION.querySe
 	
 function mix() {
 	let array_portf = PORTFOLIO_ILLUSTRATION.querySelectorAll('li');
-	let after_portf = [];
+  let after_portf = [];
 	after_portf.push(array_portf[array_portf.length - 1]);
 		 
 		 while (PORTFOLIO_ILLUSTRATION.firstChild) {
@@ -332,7 +334,7 @@ PORTFOLIO_BUTTON_ALL.addEventListener('click', (event) => {
 		currentValue.classList.remove('hidden');
 		}); 
 		
-		for(let i = 0; i < rand; i++) 
+		
 		mix();
 });
 
@@ -350,7 +352,7 @@ PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
 	PORTFOLIO_BUTTON_WEB.classList.add('portfolio-illustration-switch__item_active');
 
 
-	for(let i = 0; i < rand; i++) 
+	 
 		mix();
 });
 
@@ -366,13 +368,13 @@ PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
 	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
 	PORTFOLIO_BUTTON_GRAPHIC.classList.add('portfolio-illustration-switch__item_active');
 
-	for(let i = 0; i < rand; i++) 
+	
 		mix();
 });
 
 
 PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
-	for(let i = 0; i < rand; i++) 
+	
 		mix();
 
   PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
