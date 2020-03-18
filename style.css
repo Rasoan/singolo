@@ -630,9 +630,9 @@ body {
 }
 
 
-.portfolio-illustration li:nth-child(n+13) {
+/* .portfolio-illustration li:nth-child(n+13) {
   display: none;
-}
+} */
 
 
 .portfolio-illustration__item:hover {
@@ -904,7 +904,9 @@ body {
   line-height: 0px;
 }
 
-
+button {
+  outline: none;
+}
 
 
 .hidden {
