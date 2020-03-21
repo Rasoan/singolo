@@ -303,15 +303,23 @@ function mix(saved_tags) {
 
 
 PORTFOLIO_BUTTON_ALL.addEventListener('click', (event) => {
+
+	PORTFOLIO_SWITCH.querySelectorAll('.portfolio-illustration-switch__item').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+
+	if(~event.target.className.indexOf('portfolio-illustration-switch__item', 0)) // если таргет был именно на ссылку (~ = -1)
+			event.target.classList.add('portfolio-illustration-switch__item_active');  // добавить класс
+
+
+
 	if(flag != 'All') { // если была нажата другая кнопка то выполняем вот это
 		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
 		liElements_time = [...ELEMENTS_SAVE]; // кладём в этот массив исходное состояние узла
 		flag = 'All'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
     return  (f => {  // немедленно выполняем эту функцию - возвращаем узел в исходное состояние и завершаем функцию кнопки
-			while(PORTFOLIO_ILLUSTRATION.firstChild) { 
+			while(PORTFOLIO_ILLUSTRATION.firstChild) { // удалить всё из узла
 				PORTFOLIO_ILLUSTRATION.firstChild.remove();
 			}
-				PORTFOLIO_ILLUSTRATION.append(...ELEMENTS_SAVE);
+				PORTFOLIO_ILLUSTRATION.append(...ELEMENTS_SAVE); // вернуть ему исходное состояние
 		})();
 	}
 	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
@@ -322,6 +330,15 @@ PORTFOLIO_BUTTON_ALL.addEventListener('click', (event) => {
 
 
 PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
+
+	PORTFOLIO_SWITCH.querySelectorAll('.portfolio-illustration-switch__item').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+
+	if(~event.target.className.indexOf('portfolio-illustration-switch__item', 0)) // если таргет был именно на ссылку (~ = -1)
+			event.target.classList.add('portfolio-illustration-switch__item_active');  // добавить класс
+
+
+
+
 	if(flag != 'WEB') { // если была нажата другая кнопка то выполняем вот это
 		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
 		flag = 'WEB'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
@@ -330,10 +347,10 @@ PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
 				PORTFOLIO_ILLUSTRATION.firstChild.remove();
 			}
 
-			[...ELEMENTS_SAVE].forEach(element => { 
-				if(~element.className.indexOf('portfolio-illustration__web', 0)){
-					PORTFOLIO_ILLUSTRATION.append(element);
-					liElements_time.push(element);
+			[...ELEMENTS_SAVE].forEach(element => { // взять исходное состояние детей родителя и добавить их в узел отфильтровав нужные
+				if(~element.className.indexOf('portfolio-illustration__web', 0)){ // если класс элементо именно тот
+					PORTFOLIO_ILLUSTRATION.append(element); // добавить в узел
+					liElements_time.push(element); // добавить в временный массив
 				}
 			});
 
@@ -348,6 +365,14 @@ PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
 
 
 PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
+
+	PORTFOLIO_SWITCH.querySelectorAll('.portfolio-illustration-switch__item').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+
+	if(~event.target.className.indexOf('portfolio-illustration-switch__item', 0)) // если таргет был именно на ссылку (~ = -1)
+			event.target.classList.add('portfolio-illustration-switch__item_active');  // добавить класс
+
+
+
 	if(flag != 'GRAPHIC') { // если была нажата другая кнопка то выполняем вот это
 		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
 		flag = 'GRAPHIC'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
@@ -356,10 +381,10 @@ PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
 				PORTFOLIO_ILLUSTRATION.firstChild.remove();
 			}
 
-				[...ELEMENTS_SAVE].forEach(element => { 
-					if(~element.className.indexOf('portfolio-illustration__graphic', 0)){
-						PORTFOLIO_ILLUSTRATION.append(element);
-						liElements_time.push(element);
+				[...ELEMENTS_SAVE].forEach(element => { // взять исходное состояние детей родителя и добавить их в узел отфильтровав нужные
+					if(~element.className.indexOf('portfolio-illustration__graphic', 0)){ // если класс элементо именно тот
+						PORTFOLIO_ILLUSTRATION.append(element); // добавить в узел
+						liElements_time.push(element);// добавить в временный массив
 					}
 				});
 
@@ -370,6 +395,17 @@ PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
 
 
 PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
+
+	PORTFOLIO_SWITCH.querySelectorAll('.portfolio-illustration-switch__item').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
+
+	if(~event.target.className.indexOf('portfolio-illustration-switch__item', 0)) // если таргет был именно на ссылку (~ = -1)
+			event.target.classList.add('portfolio-illustration-switch__item_active');  // добавить класс
+	
+	
+	
+
+
+
 	if(flag != 'ARTWORK') { // если была нажата другая кнопка то выполняем вот это
 		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
 		flag = 'ARTWORK'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
@@ -378,10 +414,10 @@ PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
 				PORTFOLIO_ILLUSTRATION.firstChild.remove();
 			}
 
-			[...ELEMENTS_SAVE].forEach(element => { 
-			  if(~element.className.indexOf('portfolio-illustration__artwork', 0)){
-				  PORTFOLIO_ILLUSTRATION.append(element);
-				  liElements_time.push(element);
+			[...ELEMENTS_SAVE].forEach(element => {  // взять исходное состояние детей родителя и добавить их в узел отфильтровав нужные
+			  if(~element.className.indexOf('portfolio-illustration__artwork', 0)){ // если класс элементо именно тот
+				  PORTFOLIO_ILLUSTRATION.append(element); // добавить в узел
+				  liElements_time.push(element); // добавить в временный массив
 			  }
 			});
 
