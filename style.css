@@ -582,9 +582,56 @@ body {
 
 
 .portfolio-illustration-switch {
+  position: relative;
   display: flex;
   margin-bottom: 19px;
 }
+
+/* подсказка */
+
+.enrolleForm__mark {
+  background-color: white !important;
+  line-height: 13px;
+  height: 22px;
+  padding-left: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0.9;
+}
+
+
+
+.enrolleForm__mark-hintNoBudget {  /* подсказка для внебюджета */
+  display: none;
+    position: absolute;
+    width: 160px;
+    padding: 5px;
+    left: -180px;
+    top: -116px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: left;
+    background-color: wheat;
+}
+
+
+
+.portfolio-illustration-switch li:hover ~ .enrolleForm__mark-hintNoBudget { /* hover для подсказски внебюджет (навести курсор на label)*/
+  display: block;
+}
+.enrolleForm__mark:not(:empty) {
+   padding-left: 30px;
+}
+
+ 
+.red {
+  color: red;
+}
+
+/* подсказка */
+
+
 
 
 .portfolio-illustration-switch li {
