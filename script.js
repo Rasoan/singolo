@@ -11,8 +11,70 @@ MENU.addEventListener('click', (event) => {
   MENU.querySelectorAll('.header-navigation-list__item .header-navigation-list__link').forEach(element => element.classList.remove('header-navigation-list__link-active')); // пробежаться по списку и поудалять
 
   if(~event.target.className.indexOf('header-navigation-list__link', 0)) // если таргет был именно на ссылку (~ = -1)
-  event.target.classList.add('header-navigation-list__link-active');  // добавить класс
+	event.target.classList.add('header-navigation-list__link-active');  // добавить класс
 });
+
+
+
+
+
+
+
+const LINK_MENU = document.getElementById('header-navigation-list__link-home'); // ссылка home
+const LINK_SERVICES =  document.getElementById('header-navigation-list__link-services');
+const LINK_PORTFOLIO = document.getElementById('header-navigation-list__link-portfolio');
+const LINK_ABOUT = document.getElementById('header-navigation-list__link-about');
+const LINK_CONTACT = document.getElementById('header-navigation-list__link-contact');
+
+
+LINK_MENU.addEventListener('click', (event) => {
+	window.scrollTo(0,0);
+});
+
+LINK_SERVICES.addEventListener('click', (event) => {
+	window.scrollTo(0, 600);
+});
+
+LINK_PORTFOLIO.addEventListener('click', (event) => {
+	window.scrollTo(0, 1130);
+});
+
+LINK_ABOUT.addEventListener('click', (event) => {
+	window.scrollTo(0, 1966);
+});
+
+LINK_CONTACT.addEventListener('click', (event) => {
+	window.scrollTo(0, 2733);
+});
+
+
+
+window.addEventListener('scroll', function() {
+	 let scroll = window.pageYOffset; // координата текущей позиции по скроллу Y
+	 console.log(scroll);
+
+	 MENU.querySelectorAll('.header-navigation-list__item .header-navigation-list__link').forEach(element => element.classList.remove('header-navigation-list__link-active')); // пробежаться по списку и поудалять
+	 
+	 if (scroll < 600) { 
+    LINK_MENU.classList.add('header-navigation-list__link-active');    
+	 }
+	 else if (scroll >= 600 && scroll < 1130) {
+		LINK_SERVICES.classList.add('header-navigation-list__link-active');
+	 }
+	 else if (scroll >= 1130 && scroll < 1966) {
+		LINK_PORTFOLIO.classList.add('header-navigation-list__link-active');
+	 }
+	 else if (scroll >= 1966 && scroll < 2733) {
+		LINK_ABOUT.classList.add('header-navigation-list__link-active');
+	 }
+	 else if (scroll >= 2733) {
+		LINK_CONTACT.classList.add('header-navigation-list__link-active');
+	 }
+});
+
+
+
+
 
 // слайдер 
 let items = document.querySelectorAll('.slider__item');

@@ -39,6 +39,12 @@ body {
 }
 
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
 .header-wrap {
   width: 100%;
   border-bottom: 6px solid #323746;
@@ -125,6 +131,7 @@ body {
 .header-navigation-list__link:hover {
   cursor: pointer;
 }
+
 
 
 .header-navigation-list__link-active {
@@ -916,7 +923,6 @@ body {
   width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: white;
   min-height: 150px;
   max-height: 280px;
