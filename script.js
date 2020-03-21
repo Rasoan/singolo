@@ -266,11 +266,10 @@ BUTTON_CLOSE.addEventListener('click', () => {
 
 
 // портфолио
-
+const PORTFOLIO_BUTTON_ALL = document.getElementById('portfolio-button-all-JS'); // айдиш аник кнопки ALL
 const PORTFOLIO_BUTTON_WEB = document.getElementById('portfolio-button-web-design-JS');
 const PORTFOLIO_BUTTON_GRAPHIC = document.getElementById('portfolio-button-graphic-design-JS');
 const PORTFOLIO_BUTTON_ARTWORK = document.getElementById('portfolio-button-artwork-JS');
-
 const PORTFOLIO_SWITCH = document.getElementById('portfolio-illustration-switch-JS');
 
 
@@ -283,108 +282,110 @@ const PORTFOLIO_SWITCH = document.getElementById('portfolio-illustration-switch-
 // portfolio-illustration-switch-JS
 // replacedNode = parentNode.replaceChild(newChild, oldChild);
 
-const PORTFOLIO_BUTTON_ALL = document.getElementById('portfolio-button-all-JS'); // айдишник кнопки ALL
-let PORTFOLIO_ILLUSTRATION = document.getElementById('portfolio-illustration-JS'); // айдишник контейнера моих ли
-const rand =  Math.floor(Math.random() * 12345) % PORTFOLIO_ILLUSTRATION.querySelectorAll('li').length; 
-let array_portf = PORTFOLIO_ILLUSTRATION.querySelectorAll('li');
-let after_portf = [];
 
-
+const PORTFOLIO_ILLUSTRATION = document.getElementById('portfolio-illustration-JS'); // айдишник контейнера моих ли
+let PORTFOLIO_ILLUSTRATION_LI = PORTFOLIO_ILLUSTRATION.querySelectorAll('li');
+const ELEMENTS_SAVE = [...PORTFOLIO_ILLUSTRATION.querySelectorAll('li')];
+let liElements_time = [...PORTFOLIO_ILLUSTRATION.querySelectorAll('li')];
+let flag = 'All';
 	
-    
-    
-  
 
 
-
-
-	
-function mix() {
-	let array_portf = PORTFOLIO_ILLUSTRATION.querySelectorAll('li');
-  let after_portf = [];
-	after_portf.push(array_portf[array_portf.length - 1]);
-		 
-		 while (PORTFOLIO_ILLUSTRATION.firstChild) {
-			PORTFOLIO_ILLUSTRATION.removeChild(PORTFOLIO_ILLUSTRATION.firstChild);
-		 }
-	 
-		 array_portf.forEach( function (element, index, ar) {
-			 if(index < (ar.length -1)) 
-			 after_portf.push(element); 
-	 });
-	 
-	 after_portf.forEach( function (element, index, ar) {
-		PORTFOLIO_ILLUSTRATION.appendChild(element);
-	 });
+function mix(saved_tags) {
+	const last = liElements_time.pop(); // последний элемент убрать и запомнить
+	liElements_time.unshift(last);
+	while(saved_tags.firstChild) {
+			saved_tags.firstChild.remove();
 	}
-
-
-
-
-
-
-
-
-
+	saved_tags.append(...liElements_time); // добавить наш массив
+}
 
 
 
 PORTFOLIO_BUTTON_ALL.addEventListener('click', (event) => {
-	PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(function callback(currentValue, index, array) {
-		currentValue.classList.remove('hidden');
-		}); 
-		
-		
-		mix();
+	if(flag != 'All') { // если была нажата другая кнопка то выполняем вот это
+		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
+		liElements_time = [...ELEMENTS_SAVE]; // кладём в этот массив исходное состояние узла
+		flag = 'All'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
+    return  (f => {  // немедленно выполняем эту функцию - возвращаем узел в исходное состояние и завершаем функцию кнопки
+			while(PORTFOLIO_ILLUSTRATION.firstChild) { 
+				PORTFOLIO_ILLUSTRATION.firstChild.remove();
+			}
+				PORTFOLIO_ILLUSTRATION.append(...ELEMENTS_SAVE);
+		})();
+	}
+	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
 });
+
+
+
 
 
 PORTFOLIO_BUTTON_WEB.addEventListener('click', (event) => {
-  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
-		if(~element.className.indexOf('portfolio-illustration__web', 0))
-	  	element.classList.remove('hidden');
-		else
-		  element.classList.add('hidden');
-	}); // пробежаться по списку и поудалять
+	if(flag != 'WEB') { // если была нажата другая кнопка то выполняем вот это
+		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
+		flag = 'WEB'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
+    return  (f => {  // немедленно выполняем эту функцию - возвращаем узел в исходное состояние и завершаем функцию кнопки
+			while(PORTFOLIO_ILLUSTRATION.firstChild) {
+				PORTFOLIO_ILLUSTRATION.firstChild.remove();
+			}
+
+			[...ELEMENTS_SAVE].forEach(element => { 
+				if(~element.className.indexOf('portfolio-illustration__web', 0)){
+					PORTFOLIO_ILLUSTRATION.append(element);
+					liElements_time.push(element);
+				}
+			});
+
+		})();
+	}
+	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
+}); 
 
 
-	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
-	PORTFOLIO_BUTTON_WEB.classList.add('portfolio-illustration-switch__item_active');
 
 
-	 
-		mix();
-});
 
 
 PORTFOLIO_BUTTON_GRAPHIC.addEventListener('click', (event) => {
-  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
-		if(~element.className.indexOf('portfolio-illustration__graphic', 0))
-	  	element.classList.remove('hidden');
-		else
-		  element.classList.add('hidden');
-	}); // пробежаться по списку и поудалять
+	if(flag != 'GRAPHIC') { // если была нажата другая кнопка то выполняем вот это
+		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
+		flag = 'GRAPHIC'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
+    return  (f => {  // немедленно выполняем эту функцию - возвращаем узел в исходное состояние и завершаем функцию кнопки
+			while(PORTFOLIO_ILLUSTRATION.firstChild) {
+				PORTFOLIO_ILLUSTRATION.firstChild.remove();
+			}
 
-	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
-	PORTFOLIO_BUTTON_GRAPHIC.classList.add('portfolio-illustration-switch__item_active');
+				[...ELEMENTS_SAVE].forEach(element => { 
+					if(~element.className.indexOf('portfolio-illustration__graphic', 0)){
+						PORTFOLIO_ILLUSTRATION.append(element);
+						liElements_time.push(element);
+					}
+				});
 
-	
-		mix();
-});
+		})();
+	}
+	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
+	});
 
 
 PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
-	
-		mix();
+	if(flag != 'ARTWORK') { // если была нажата другая кнопка то выполняем вот это
+		liElements_time.length = 0;		// убираем всё из массива который запишет своё содержимое в узел
+		flag = 'ARTWORK'; // ставим флаг в позицию текущей кнопки, что б при следующем заходе не откатывало обратно
+    return  (f => {  // немедленно выполняем эту функцию - возвращаем узел в исходное состояние и завершаем функцию кнопки
+			while(PORTFOLIO_ILLUSTRATION.firstChild) { 
+				PORTFOLIO_ILLUSTRATION.firstChild.remove();
+			}
 
-  PORTFOLIO_ILLUSTRATION.querySelectorAll('li').forEach(element => {
-		if(~element.className.indexOf('portfolio-illustration__artwork', 0))
-	  	element.classList.remove('hidden');
-		else
-		  element.classList.add('hidden');
-	}); // пробежаться по списку и поудалять
+			[...ELEMENTS_SAVE].forEach(element => { 
+			  if(~element.className.indexOf('portfolio-illustration__artwork', 0)){
+				  PORTFOLIO_ILLUSTRATION.append(element);
+				  liElements_time.push(element);
+			  }
+			});
 
-	PORTFOLIO_SWITCH.querySelectorAll('li button').forEach(element => element.classList.remove('portfolio-illustration-switch__item_active'));
-	PORTFOLIO_BUTTON_ARTWORK.classList.add('portfolio-illustration-switch__item_active');
-
-});
+		})();
+	}
+	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
+});	
