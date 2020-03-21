@@ -435,6 +435,7 @@ body {
 }
 
 
+
 .services__table-cell-info {
   width: 220px;
 }
@@ -639,6 +640,15 @@ body {
   cursor: pointer;
   opacity: 0.5;
 }
+
+.portfolio-illustration__item-active {
+  opacity: 0.8;
+  outline: 5px solid #F06C64;
+}
+
+
+
+
 
 
 .information-specialist__main-info {

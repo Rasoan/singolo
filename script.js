@@ -425,3 +425,22 @@ PORTFOLIO_BUTTON_ARTWORK.addEventListener('click', (event) => {
 	}
 	mix(PORTFOLIO_ILLUSTRATION); // функция mix передвигает мои элементы на позицию вперёд
 });	
+
+
+
+
+
+PORTFOLIO_ILLUSTRATION.addEventListener('click', (event) => {		
+  PORTFOLIO_ILLUSTRATION.querySelectorAll('#portfolio-illustration-JS  .portfolio-illustration__item').forEach(element => element.classList.remove('portfolio-illustration__item-active')); // пробежаться по списку и поудалять
+  if(~event.target.className.indexOf('portfolio-illustration__item', 0)) // если таргет был именно на картинку (~ = -1)
+   event.target.classList.add('portfolio-illustration__item-active');  // добавить класс
+});
+
+
+const BODY = document.body;
+
+BODY.addEventListener('click', (event) => {		
+  
+  if(!(~event.target.className.indexOf('portfolio-illustration__item', 0))) // если таргет был не на картинку(~ = -1)
+	PORTFOLIO_ILLUSTRATION.querySelectorAll('#portfolio-illustration-JS  .portfolio-illustration__item').forEach(element => element.classList.remove('portfolio-illustration__item-active')); // пробежаться по списку и поудалять у всех рамку
+});
