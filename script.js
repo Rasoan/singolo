@@ -51,8 +51,7 @@ LINK_CONTACT.addEventListener('click', (event) => {
 
 window.addEventListener('scroll', function() {
 	 let scroll = window.pageYOffset; // координата текущей позиции по скроллу Y
-	 console.log(scroll);
-
+	
 	 MENU.querySelectorAll('.header-navigation-list__item .header-navigation-list__link').forEach(element => element.classList.remove('header-navigation-list__link-active')); // пробежаться по списку и поудалять
 	 
 	 if (scroll < 600) { 
