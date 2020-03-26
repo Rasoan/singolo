@@ -1,3 +1,4 @@
+const HEADER = document.getElementById('header-navigation-list-JS');
 const MENU = document.getElementById('header-navigation-list-JS');
 const FORM = document.getElementById("main-form-JS");
 const BUTTON = document.getElementById('main-form__button-JS'); // кнопка отправки формы
@@ -15,7 +16,9 @@ MENU.addEventListener('click', (event) => {
 });
 
 
-
+HEADER.addEventListener('click', (event) => {
+  
+});
 
 
 
@@ -52,6 +55,8 @@ LINK_CONTACT.addEventListener('click', (event) => {
 window.addEventListener('scroll', function() {
 	 let scroll = window.pageYOffset; // координата текущей позиции по скроллу Y
 	
+   
+
 	 MENU.querySelectorAll('.header-navigation-list__item .header-navigation-list__link').forEach(element => element.classList.remove('header-navigation-list__link-active')); // пробежаться по списку и поудалять
 	 
 	 if (scroll < 600) { 
@@ -262,14 +267,24 @@ PHONE_HORIZONTAL_DISPLAY.addEventListener('click', () => {
 
 
 
-
+//overflow : hidden
 // Get a quote
 // событие отправки формы и нажатия клавиши отправить
+
+
 FORM.addEventListener('submit', function(){
-  
-  event.preventDefault();
+	event.preventDefault();
+	
+
+
   document.getElementById('form-message-block-JS').classList.remove('hidden'); // убрать класс hidden у всплывашки
-  document.getElementById('form-message-block-background-JS').classList.remove('hidden'); // убрать класс hidden у всплывашки
+	document.getElementById('form-message-block-background-JS').classList.remove('hidden'); // убрать класс hidden у всплывашки
+	document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+	
+
+	
+
+	//body.style.overflow = 'hidden';
   
   const SUBJECT = document.getElementById('main-form__input-subject-JS').value.toString(); // текст который ввёл в инпут с id subject
   const DESCRIBE = document.getElementById('main-form__textarea-describe-JS').value.toString(); // текст который ввёл в инпут с id subject
@@ -293,7 +308,8 @@ MESSAGE_BLOCK.addEventListener('click', () => {
   document.getElementById('form-message-block-JS').classList.add('hidden'); // добавить класс hidden у всплывашки
   document.getElementById('form-message-block-background-JS').classList.add('hidden'); // убрать класс hidden у всплывашки
   document.getElementById('form-message-block-topic-JS').innerText = ''; // убрать текст из перемен. id-ишник result
-  document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementsByTagName('body')[0].style.overflow = 'scroll';
 });
 
 
@@ -303,7 +319,8 @@ document.addEventListener('keydown', function(event) {
     document.getElementById('form-message-block-JS').classList.add('hidden'); // добавить класс hidden у всплывашки
     document.getElementById('form-message-block-background-JS').classList.add('hidden'); // убрать класс hidden у всплывашки
     document.getElementById('form-message-block-topic-JS').innerText = ''; // убрать текст из перемен. id-ишник result
-    document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+		document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+		document.getElementsByTagName('body')[0].style.overflow = 'scroll';
 });
 
 
@@ -312,7 +329,8 @@ BUTTON_OK.addEventListener('click', () => {
   document.getElementById('form-message-block-JS').classList.add('hidden'); // добавить класс hidden у всплывашки
   document.getElementById('form-message-block-background-JS').classList.add('hidden'); // убрать класс hidden у всплывашки
   document.getElementById('form-message-block-topic-JS').innerText = ''; // убрать текст из перемен. id-ишник result
-  document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementsByTagName('body')[0].style.overflow = 'scroll';
 });
 
 
@@ -321,7 +339,8 @@ BUTTON_CLOSE.addEventListener('click', () => {
   document.getElementById('form-message-block-JS').classList.add('hidden'); // добавить класс hidden у всплывашки
   document.getElementById('form-message-block-background-JS').classList.add('hidden'); // убрать класс hidden у всплывашки
   document.getElementById('form-message-block-topic-JS').innerText = ''; // убрать текст из перемен. id-ишник result
-  document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementById('form-message-block-description-JS').innerText = ''; // убрать текст из перемен. id-ишник result
+	document.getElementsByTagName('body')[0].style.overflow = 'scroll';
 });
 
 
