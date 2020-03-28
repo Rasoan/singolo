@@ -177,6 +177,7 @@ body {
 
 
 .slider__list {
+  height: 100%;
   position: relative;
   list-style: none;
   padding: 0;
@@ -187,9 +188,19 @@ body {
 
 .slider__item {
   display: none;
+  width: 100%;
+  height: 100%;
   position: relative;
   margin: 0 auto;
   animation: 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+
+.phoneIMG {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -262,7 +273,7 @@ body {
   top: 118px;
   left: 126px;
   width: 188px;
-  height: 333px;
+  height: 334px;
   background-color: black;
   z-index: 0;
 }
@@ -273,7 +284,7 @@ body {
   top: 188px;
   left: 485px;
   width: 333px;
-  height: 188px;
+  height: 192px;
   background-color: black;
   z-index: 0;
 }
@@ -347,7 +358,7 @@ body {
 .slider__btn-left {
   position: absolute;
   top: calc(50% - 15px);
-  left: 4%;
+  left: 40px;
   width: 16px;
   height: 27px;
   z-index: 2;
@@ -358,7 +369,7 @@ body {
 .slider__btn-right {
   position: absolute;
   top: calc(50% - 15px);
-  right: 4%;
+  right: 40px;
   width: 16px;
   height: 27px;
   z-index: 2;
@@ -1224,7 +1235,7 @@ button {
 
 
 
-@media (min-width: 768px) and (max-width: 1020px) {
+@media (max-width: 1020px) {
   
   .container {
     max-width: 940px;
@@ -1259,48 +1270,47 @@ button {
 
 .slider-container {
   max-width: 1020px;
-  height: 455px;
+  max-height: 455px;
+  overflow: hidden;
 }
 
 
 .slider__phone-vertical-display {
   top: 91px;
-  left: 100px;
-  width: 143px;
+  left: 13%;
+  width: 148px;
   height: 252px;
-  z-index: 0;
 }
 
 
 .slider__phone-horizontal-display {
-  top: 147px;
-  left: 371px;
-  width: 249px;
+  top: 144px;
+  left: 47%;
+  width: 256px;
   height: 143px;
-  z-index: 0;
 }
 
 
 .slider__phone-vertical {
   top: 42px;
-  left: 90px;
+  left: 12%;
   width: 182px;
   height: 365px
 }
 
 .slider__phone-horizontal {
-  top: 137px;
-  left: 326px;
+  top: 134px;
+  left: 42%;
   width: 362px;
-  height: 182px
+  height: 182px;
 }
 
 
 .slider__phone-horizontal-click {
-  top: 137px;
-  left: 325px;
+  top: 134px;
+  left:  42%;
   width: 344px;
-  height: 162px;
+  height: 163px;
   border: 0;
   border-radius: 19px;
 }
@@ -1308,18 +1318,24 @@ button {
 
 .slider__phone-vertical-click {
   top: 42px;
-  left: 90px;
+  left: 12%;
   width: 164px;
   height: 348px;
   border: 0;
   border-radius: 25px;
 }
 
+.slider__btn-left {
+  left: 30px;
+}
+.slider__btn-right {
+    right: 30px;
+}
 
 .services-container {
   padding: 39.3px 40px 77px 40px;
   margin: auto;
-  max-width: 940px;
+  max-width: 620px;
 }
 
 
@@ -1332,12 +1348,12 @@ button {
   grid-template: repeat(3, 84px)/repeat(2, 300px);
   grid-gap: 60px 20px;
   margin: 0 0 0 1px;
-  justify-content: center;
 }
 
 
 .portfolio-container {
   padding: 59px 40px 94px 40px;
+  max-width: 700px;
 }
 
 
@@ -1347,9 +1363,17 @@ button {
   grid-gap: 20px;
 }
 
+.enrolleForm__mark-hintNoBudget {
+  width: 120px;
+  padding: 5px;
+  left: -2px;
+  top: 40px;
+}
+
 
 .information-specialists-container {
   padding: 50px 40px 5px 40px;
+  max-width: 640px;
 }
 
 .list-specialists__item {
@@ -1365,7 +1389,7 @@ button {
 
 
 .main-form-container {
-  max-width: 768px;
+  max-width: 640px;
   padding: 50px 40px 41px 40px;
   margin: 0 auto;
 }
@@ -1373,7 +1397,7 @@ button {
 
 .main-form__input,
 .main-form__textarea {
-  max-width: 456px;
+  max-width: 356px;
 }
 
 .main-form__textarea {
@@ -1383,9 +1407,190 @@ button {
 }
 
 
-
 .footer-container {
-  max-width: 940px;
+  max-width: 640px;
   padding: 22px 40px;
 }
- }
+
+}
+
+
+
+@media (max-width: 768px) {
+  
+  .container {
+    max-width: 940px;
+    padding: 0 40px;
+  } 
+
+.header-container {
+    padding: 24px 0 27px 0;
+}
+
+.header-navigation-container {
+  margin: 13px 36px 0 auto;
+}
+
+
+.header-navigation-list__item::after {
+  content: "";
+  margin: 0 14px;
+}
+
+.header-title {
+  max-width: 124px;
+  height: 36px;
+  margin: 0 40px;
+}
+
+
+.header-title__link {
+  letter-spacing: -0.9px;
+}
+
+
+.slider-container {
+  max-width: 1020px;
+  max-height: 455px;
+  overflow: hidden;
+}
+
+
+.slider__phone-vertical-display {
+  top: 91px;
+  left: 13%;
+  width: 148px;
+  height: 252px;
+}
+
+
+.slider__phone-horizontal-display {
+  top: 144px;
+  left: 47%;
+  width: 256px;
+  height: 143px;
+}
+
+
+.slider__phone-vertical {
+  top: 42px;
+  left: 12%;
+  width: 182px;
+  height: 365px
+}
+
+.slider__phone-horizontal {
+  top: 134px;
+  left: 42%;
+  width: 362px;
+  height: 182px;
+}
+
+
+.slider__phone-horizontal-click {
+  top: 134px;
+  left:  42%;
+  width: 344px;
+  height: 163px;
+  border: 0;
+  border-radius: 19px;
+}
+
+
+.slider__phone-vertical-click {
+  top: 42px;
+  left: 12%;
+  width: 164px;
+  height: 348px;
+  border: 0;
+  border-radius: 25px;
+}
+
+.slider__btn-left {
+  left: 30px;
+}
+.slider__btn-right {
+    right: 30px;
+}
+
+.services-container {
+  padding: 39.3px 40px 77px 40px;
+  margin: auto;
+  max-width: 620px;
+}
+
+
+.services__description-container {
+  margin: 0 0 35px 0;
+}
+
+
+.services__table {
+  grid-template: repeat(3, 84px)/repeat(2, 300px);
+  grid-gap: 60px 20px;
+  margin: 0 0 0 1px;
+}
+
+
+.portfolio-container {
+  padding: 59px 40px 94px 40px;
+  max-width: 700px;
+}
+
+
+.portfolio-illustration {
+  display: grid;
+  grid-template: repeat(4, 187px)/repeat(3, 220px);
+  grid-gap: 20px;
+}
+
+.enrolleForm__mark-hintNoBudget {
+  width: 120px;
+  padding: 5px;
+  left: -2px;
+  top: 40px;
+}
+
+
+.information-specialists-container {
+  padding: 50px 40px 5px 40px;
+  max-width: 640px;
+}
+
+.list-specialists__item {
+  max-width: 200px;
+}
+
+
+.list-specialists img {
+  max-width: 200px;
+  padding-bottom: 11px;
+  object-fit: cover;
+}
+
+
+.main-form-container {
+  max-width: 640px;
+  padding: 50px 40px 41px 40px;
+  margin: 0 auto;
+}
+
+
+.main-form__input,
+.main-form__textarea {
+  max-width: 356px;
+}
+
+.main-form__textarea {
+  resize: none;
+  min-height: 108px;
+  word-break: break-all;
+}
+
+
+.footer-container {
+  max-width: 640px;
+  padding: 22px 40px;
+}
+
+}
