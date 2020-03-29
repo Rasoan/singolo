@@ -1250,6 +1250,10 @@ button {
 
 
 @media (max-width: 1020px) {
+
+  body {
+    overflow-x: visible;
+  }
   
   .container {
     max-width: 940px;
