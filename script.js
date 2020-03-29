@@ -11,7 +11,6 @@ const BUTTON_CLOSE = document.getElementById('form-message-block-close-JS'); // 
 
 
 
-
 window.addEventListener('scroll', function() {
 	 let scroll = window.scrollY; // координата текущей позиции по скроллу Y
 	 let sections = document.querySelectorAll('#main-js > section');
@@ -21,7 +20,7 @@ window.addEventListener('scroll', function() {
 	 sections.forEach((element) => {
 		 
 
-	 if(element.offsetTop <= scroll + 91 && (element.offsetTop + el.offsetHeight) > scroll) {
+	 if(element.offsetTop <= scroll + document.getElementById('header_id').offsetHeight && (element.offsetTop + el.offsetHeight) > scroll) {
 		menu_items.forEach((a) => {
 			a.classList.remove('header-navigation-list__link-active');
 			if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
