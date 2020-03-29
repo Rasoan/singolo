@@ -21,7 +21,7 @@ window.addEventListener('scroll', function() {
 	 sections.forEach((element) => {
 		 
 
-	 if(element.offsetTop <= scroll && (element.offsetTop + el.offsetHeight) > scroll) {
+	 if(element.offsetTop <= scroll + 91 && (element.offsetTop + el.offsetHeight) > scroll) {
 		menu_items.forEach((a) => {
 			a.classList.remove('header-navigation-list__link-active');
 			if (element.getAttribute('id') === a.getAttribute('href').substring(1)) {
