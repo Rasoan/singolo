@@ -16,9 +16,7 @@ MENU.addEventListener('click', (event) => {
 });
 
 
-HEADER.addEventListener('click', (event) => {
-  
-});
+
 
 
 
@@ -149,6 +147,7 @@ const swipedetect = (el) => {
 		startY = e.pageY;
 		startTime = new Date().getTime();
 		e.preventDefault();
+		
 	}, false);
 
 	surface.addEventListener('mouseup', function(e){
@@ -172,6 +171,12 @@ const swipedetect = (el) => {
 	}, false);
 
 	surface.addEventListener('touchstart', function(e){
+    if ( !(~event.target.className.indexOf('header-rectangle', 0)) && header_rectangle.classList.contains('header-rectangle-rotate') && !(~event.target.className.indexOf('header-navigation-list__link', 0))  ) {
+	 header_rectangle.classList.remove('header-rectangle-rotate');
+	 header_menu.classList.toggle('header-navigation-container_display-none');
+		}
+
+
 		if (e.target.classList.contains('arrow') || e.target.classList.contains('control')) {
 			if (e.target.classList.contains('slider__btn-left')) {
 				if (isEnabled) {
@@ -355,12 +360,7 @@ const PORTFOLIO_SWITCH = document.getElementById('portfolio-illustration-switch-
 
 
 
-// portfolio-illustration__web
-// portfolio-illustration__graphic
-// portfolio-illustration__artwork
-// portfolio-illustration-switch__item_active
-// portfolio-illustration-switch-JS
-// replacedNode = parentNode.replaceChild(newChild, oldChild);
+
 
 
 const PORTFOLIO_ILLUSTRATION = document.getElementById('portfolio-illustration-JS'); // айдишник контейнера моих ли
@@ -517,10 +517,41 @@ PORTFOLIO_ILLUSTRATION.addEventListener('click', (event) => {
 });
 
 
+
+
+
+
+const header_rectangle = document.getElementById('HEADER-RECTANGLE-JS');
+const header_menu = document.getElementById('HEADER-NAVIGATION-CONTAINER-JS');
+
+
+header_rectangle.addEventListener('click', (event) => {	
+
+	header_menu.classList.toggle('header-navigation-container_display-none');
+	header_rectangle.classList.toggle('header-rectangle-rotate');
+
+});
+
+
+
+
 const BODY = document.body;
 
 BODY.addEventListener('click', (event) => {		
   
   if(!(~event.target.className.indexOf('portfolio-illustration__item', 0))) // если таргет был не на картинку(~ = -1)
 	PORTFOLIO_ILLUSTRATION.querySelectorAll('#portfolio-illustration-JS  .portfolio-illustration__item').forEach(element => element.classList.remove('portfolio-illustration__item-active')); // пробежаться по списку и поудалять у всех рамку
+
+	if(!(~event.target.className.indexOf('header-navigation-list__link', 0)) && !(~event.target.className.indexOf('header-rectangle', 0))) {
+	 header_menu.classList.remove('header-navigation-container_display-none');
+	}
+
+
+
+ 	if ( !(~event.target.className.indexOf('header-rectangle', 0)) && header_rectangle.classList.contains('header-rectangle-rotate') && !(~event.target.className.indexOf('header-navigation-list__link', 0))  )
+	 header_rectangle.classList.remove('header-rectangle-rotate');
+
+
 });
+
+
