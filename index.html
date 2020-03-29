@@ -21,22 +21,21 @@
         <div id="HEADER-NAVIGATION-CONTAINER-JS" class="header-navigation-container">
           <nav>
             <ul class="header-navigation-list" id="header-navigation-list-JS">
-              <li class="header-navigation-list__item"><a id="header-navigation-list__link-home" class="header-navigation-list__link header-navigation-list__link-active">Home</a></li>
-              <li class="header-navigation-list__item"><a id="header-navigation-list__link-services" class="header-navigation-list__link" >Services</a>
+              <li class="header-navigation-list__item"><a id="header-navigation-list__link-home" class="header-navigation-list__link header-navigation-list__link-active" href="#Home__section">Home</a></li>
+              <li class="header-navigation-list__item"><a id="header-navigation-list__link-services" class="header-navigation-list__link" href="#Our-Services__section">Services</a>
               </li>
-              <li class="header-navigation-list__item"><a id="header-navigation-list__link-portfolio" class="header-navigation-list__link" >Portfolio</a>
+              <li class="header-navigation-list__item"><a id="header-navigation-list__link-portfolio" class="header-navigation-list__link" href="#Portfolio__section">Portfolio</a>
               </li>
-              <li class="header-navigation-list__item"><a id="header-navigation-list__link-about" class="header-navigation-list__link" >About</a></li>
-              <li class="header-navigation-list__item"><a id="header-navigation-list__link-contact" class="header-navigation-list__link" >Contact</a></li>
+              <li class="header-navigation-list__item"><a id="header-navigation-list__link-about" class="header-navigation-list__link" href="#About__section">About</a></li>
+              <li class="header-navigation-list__item"><a id="header-navigation-list__link-contact" class="header-navigation-list__link" href="#Contacts_section">Contact</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <main>
-    <article>
-      <section>
+  <main id="main-js">
+      <section id="Home__section"> 
         <div id="slider-wrap-js" class="slider-wrap">
           <div class="slider-container">
               <span class="arrow slider__btn-left"> </span>
@@ -57,9 +56,9 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="Our-Services__section">
         <div class="services-wrapper">
-          <div id="Our Services" class="services-container">
+          <div  class="services-container">
             <div class="services">
               <div class="services__description-container">
                 <h2 class="services__tittle">Our Services</h2>
@@ -124,11 +123,9 @@
           </div>
         </div>
       </section>
-    </article>
-    <article>
-      <section>
+      <section id="Portfolio__section">
         <div class="portfolio-wrapper">
-          <div id="Portfolio" class="container portfolio-container">
+          <div class="container portfolio-container">
             <h2 class="title portfolio-title">Portfolio</h2>
             <p class="description portfolio-description">Duis mollis, est non commodo luctus, nisi erat porttitor
               ligula,
@@ -158,9 +155,9 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="About__section">
         <div class="information-specialists-wrapper">
-          <div id="About" class="container information-specialists-container">
+          <div class="container information-specialists-container">
             <h2 class="title information-specialists-title">About Us</h2>
             <p class="description information-specialists-description">Fusce dapibus, tellus ac cursus commodo, tortor
               mauris
@@ -362,11 +359,9 @@
           </div>
         </div>
       </section>
-    </article>
-    <article>
-      <section>
+      <section id="Contacts_section">
         <div class="main-form-wrapper">
-          <div id="Contact" class="main-form-container">
+          <div class="main-form-container">
             <h2 class="main-form-tittle">Get a Quote</h2>
             <p class="main-form-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
               mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus,
@@ -412,10 +407,7 @@
           </div>
         </div>
       </section>
-    </article>
-  </main>
-  <footer>
-    <section>
+    <section id="footer-JS">
       <div class="footer-wrapper">
         <div class="footer-container">
           <p class="footer__copyright">© Copyright 2013</p>
@@ -473,7 +465,6 @@
         </div>
       </div>
     </section>
-  </footer>
   <script src="script.js"></script>
 </body>
 </html>
